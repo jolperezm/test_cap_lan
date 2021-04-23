@@ -32,11 +32,16 @@ public class Test extends testBase {
         paginaInicioPo.fRetorno();
         paginaInicioPo.hInicioV();
         paginaInicioPo.hVuelta();
-
     }
 
     @Given("^escojo el asiento$")
     public void escojo_el_asiento() throws Exception {
+        paginaInicioPo.sAsiento();
+    }
+
+    @Given("^ingresar pasajero$")
+    public void ingresar_pasajero() throws Exception {
+        paginaInicioPo.pasajeros();
     }
 
     @Then("^obtengo la ruta mas barata$")

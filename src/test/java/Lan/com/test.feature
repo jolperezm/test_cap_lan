@@ -10,4 +10,5 @@ Feature: busco un vuelo y obtener la tarifa mas economica
     And   escojo fecha ida
     And   escojo fecha retorno
     And   escojo el asiento
+    And   ingresar pasajero
     Then    obtengo la ruta mas barata
