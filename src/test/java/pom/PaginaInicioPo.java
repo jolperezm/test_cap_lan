@@ -39,7 +39,7 @@ public class PaginaInicioPo extends BasePage {
     WebElement hInicio, hRetorno;
 
     @FindBy(xpath = "//*[contains(text(),'BASIC')]")
-     WebElement tViaje;
+    WebElement tViaje;
     //@FindBy(id = "dialog0-0-dialog-title")
     //css = "body:nth-child(2) div.MuiDialog-root.sc-cIShpX.lakeIW:nth-child(24) div.MuiDialog-container.MuiDialog-scrollPaper:nth-child(3) > div.MuiPaper-root.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthFalse.col-sm-4.col-md-6.col-lg-6.MuiPaper-elevation24.MuiPaper-rounded")
     //WebElement banner;
@@ -131,75 +131,63 @@ public class PaginaInicioPo extends BasePage {
     }
 
     public void hInicioV() {
-        waitFor(5);
+        waitFor(3);
         hInicio.click();
-        waitFor(5);
+        waitFor(3);
         tViaje.click();
-        waitFor(5);
+        waitFor(3);
         if (isVisible(banner)) {
             warningBag.click();
-        } else waitFor(3);
+        } else waitFor(2);
     }
 
     public void hVuelta() {
-        waitFor(8);
+        waitFor(3);
         hRetorno.click();
-        waitFor(5);
+        waitFor(3);
         tViaje.click();
-        waitFor(5);
+        waitFor(3);
         btn_Cont.click();
-        waitFor(5);
+        waitFor(3);
     }
 
     public void sAsiento() {
         waitFor(5);
         asientoIda.click();
-        waitFor(5);
+        waitFor(3);
         btn_SteVuelo.click();
-        waitFor(5);
+        waitFor(3);
         asientoRtno.click();
-        waitFor(5);
+        waitFor(3);
         btn_Confirma.click();
-        waitFor(7);
-        btn_Conf.click();
         waitFor(5);
+        btn_Conf.click();
+        waitFor(3);
         if (isVisible(bannerTwo)) {
             btn_Banner.click();
-        } else waitFor(5);
+        } else waitFor(3);
 
     }
 
     public void pasajeros() {
-        waitFor(5);
+        waitFor(3);
         firstName.click();
-        waitFor(5);
         firstPsj.sendKeys("Nombre Nombre");
         firstPsj.sendKeys(Keys.TAB);
-        waitFor(2);
-        //Revisar desde aqui...//
         lastPsj.sendKeys("Apellido Apellido");
-        waitFor(2);
         birthPsj.click();
-        waitFor(2);
         birthPsj.sendKeys("16111988");
-        waitFor(5);
         //genderSlt.click();
         //genderSlt.sendKeys(Keys.TAB);
         //nationality.click();
         //nationality.sendKeys("Chile");
         //nationality.sendKeys(Keys.TAB);
         documentPsj.click();
-        waitFor(5);
         documentPsj.sendKeys("165470974");
-        waitFor(5);
         emailPsj.click();
-        waitFor(5);
         emailPsj.sendKeys("tucorreo_@outlook.cl");
-        waitFor(5);
         phonePsj.click();
-        waitFor(5);
         phonePsj.sendKeys("955669256");
-        waitFor(5);
         btnSave.click();
         waitFor(5);
         btn_Continuar.click();
