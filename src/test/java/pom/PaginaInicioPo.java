@@ -1,5 +1,6 @@
 package pom;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,11 +32,14 @@ public class PaginaInicioPo extends BasePage {
     WebElement f_Retorno;
     @FindBy(id = "btnSearchCTA")
     WebElement btn_Buscar;
-    @FindBy(css = "div.sc-eGXxtx.keKadb main.sc-eetwQk.dCTbkr div.sc-glUWqk.kcetNK div.sc-bTiqRo.iFtoJq div.sc-gFXMyG.nnfQm li.sc-gQNndl.cutlUv:nth-child(1) div.sc-fvLVrH.eRuswY div.sc-eSePXt.maMoO div.sc-bOCYYb.bpIvuu div.sc-cNQqM.gjRNoM div.sc-iFUGim.fupCEn.flight-information:nth-child(1) > span.sc-clBsIJ.kaUpli")
+
+    @FindBy(xpath = "//span[contains(text(),'Recomendado')]")
+    //(css = "div.sc-eGXxtx.keKadb main.sc-eetwQk.dCTbkr div.sc-glUWqk.kcetNK div.sc-bTiqRo.iFtoJq div.sc-gFXMyG.nnfQm li.sc-gQNndl.cutlUv:nth-child(1) div.sc-fvLVrH.eRuswY div.sc-eSePXt.maMoO div.sc-bOCYYb.bpIvuu div.sc-cNQqM.gjRNoM div.sc-iFUGim.fupCEn.flight-information:nth-child(1) > span.sc-clBsIJ.kaUpli")
     //xpath = "//*[contains(text(),'8:27')]")
-    WebElement hInicio;
+    WebElement hInicio, hRetorno;
+
     @FindBy(xpath = "//*[contains(text(),'BASIC')]")
-    WebElement tViaje;
+     WebElement tViaje;
     //@FindBy(id = "dialog0-0-dialog-title")
     //css = "body:nth-child(2) div.MuiDialog-root.sc-cIShpX.lakeIW:nth-child(24) div.MuiDialog-container.MuiDialog-scrollPaper:nth-child(3) > div.MuiPaper-root.MuiDialog-paper.MuiDialog-paperScrollPaper.MuiDialog-paperWidthFalse.col-sm-4.col-md-6.col-lg-6.MuiPaper-elevation24.MuiPaper-rounded")
     //WebElement banner;
@@ -43,17 +47,17 @@ public class PaginaInicioPo extends BasePage {
     WebElement banner;
     @FindBy(xpath = "//span[contains(text(),'Continuar sin equipaje')]")
     WebElement warningBag;
-    @FindBy(css = "div.sc-eGXxtx.keKadb main.sc-eetwQk.dCTbkr div.sc-glUWqk.kcetNK div.sc-bTiqRo.iFtoJq div.sc-gFXMyG.nnfQm li.sc-gQNndl.cutlUv:nth-child(1) div.sc-fvLVrH.eRuswY div.sc-eSePXt.maMoO div.sc-bOCYYb.bpIvuu div.sc-cNQqM.gjRNoM div.sc-iFUGim.fupCEn.flight-information:nth-child(1) > span.sc-clBsIJ.kaUpli")
-    WebElement hRetorno;
+    // reciclaje @FindBy(xpath = "//span[contains(text(),'Recomendado')]")
+    //WebElement hRetorno;
     @FindBy(id = "button9")
     WebElement btn_Cont;
     //@FindBy(css = ".RowSlot__RowStyle-d50ycw-0:nth-child(2) > .MapSlot__ColumnStyle-sc-1mrxp01-0:nth-child(1) path:nth-child(2)")
     @FindBy(css = "#cabins-group > div > div:nth-child(5) > div:nth-child(3) > div > button > svg")
-    WebElement asientoIda;
+    WebElement asientoIda, asientoRtno;
     @FindBy(id = "btn-next-flight")
     WebElement btn_SteVuelo;
-    @FindBy(css = "#cabins-group > div > div:nth-child(5) > div:nth-child(3) > div > button")
-    WebElement asientoRtno;
+    //Reciclaje @FindBy(css = "#cabins-group > div > div:nth-child(5) > div:nth-child(3) > div > button")
+    //WebElement asientoRtno;
     @FindBy(id = "btn-confirm-and-continue")
     WebElement btn_Confirma;
     @FindBy(id = "button-cart-confirm")
@@ -63,19 +67,20 @@ public class PaginaInicioPo extends BasePage {
     @FindBy(id = "continueWithoutBagsButton")
     WebElement btn_Banner;
     @FindBy(xpath = "//body/div[@id='__next']/div[1]/div[1]/div[1]/div[1]/section[1]/ol[1]/li[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]")
-    WebElement first;
-    @FindBy(id = "//body/div[@id='__next']/div[1]/div[1]/div[1]/div[1]/section[1]/ol[1]/li[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]")
-    //Revisar desde aqui los elementos..//
+    WebElement firstName;
+    @FindBy(xpath = "//*[@id='passengerDetails-firstName-ADT_1' ]")
     WebElement firstPsj;
-    @FindBy(css = "passengerDetails-lastName-ADT_1")
+    //@FindBy(css = "passengerDetails-lastName-ADT_1")
+    @FindBy(css = "#passengerDetails-lastName-ADT_1")
     WebElement lastPsj;
     @FindBy(id = "passengerInfo-dateOfBirth-ADT_1")
     WebElement birthPsj;
-    @FindBy(id = "mui-component-select-passengerInfo.gender")
-    WebElement genderSlt;
+    //@FindBy(css = "//body/div[@id='menu-passengerInfo.gender']/div[3]/ul[1]/li[1]")
+    // @FindBy(css = "#passengerInfo-gender-ADT_1")
+    //WebElement genderSlt;
     @FindBy(id = "mui-component-select-documentInfo.nationality")
     WebElement nationality;
-    @FindBy(id = "mui-component-select-documentInfo.documentType")
+    @FindBy(css = "#documentInfo-documentNumber-ADT_1")
     WebElement documentPsj;
     @FindBy(id = "passengerInfo-emails-ADT_1")
     WebElement emailPsj;
@@ -83,6 +88,8 @@ public class PaginaInicioPo extends BasePage {
     WebElement phonePsj;
     @FindBy(id = "passengerFormSubmitButtonADT_1")
     WebElement btnSave;
+    @FindBy(xpath = "//span[contains(text(),'Continuar')]")
+    WebElement btn_Continuar;
 
     //Metodos-uso//
     public void start() {
@@ -124,19 +131,14 @@ public class PaginaInicioPo extends BasePage {
     }
 
     public void hInicioV() {
-        waitFor(7);
+        waitFor(5);
         hInicio.click();
         waitFor(5);
         tViaje.click();
         waitFor(5);
-        //if (isVisible(banner)) {
-        //driver.switchTo().frame(By.cssSelector('#dialog0-0')).findElement((By) warningBag).click();
-        //} else waitFor(5);
         if (isVisible(banner)) {
             warningBag.click();
         } else waitFor(3);
-
-
     }
 
     public void hVuelta() {
@@ -146,7 +148,7 @@ public class PaginaInicioPo extends BasePage {
         tViaje.click();
         waitFor(5);
         btn_Cont.click();
-        waitFor(15);
+        waitFor(5);
     }
 
     public void sAsiento() {
@@ -158,7 +160,7 @@ public class PaginaInicioPo extends BasePage {
         asientoRtno.click();
         waitFor(5);
         btn_Confirma.click();
-        waitFor(5);
+        waitFor(7);
         btn_Conf.click();
         waitFor(5);
         if (isVisible(bannerTwo)) {
@@ -168,41 +170,40 @@ public class PaginaInicioPo extends BasePage {
     }
 
     public void pasajeros() {
-        waitFor(10);
-        first.click();
         waitFor(5);
-        firstPsj.sendKeys("Jose Luis");
+        firstName.click();
         waitFor(5);
-        lastPsj.click();
-        waitFor(5);
-        lastPsj.sendKeys("Perez");
-        waitFor(5);
+        firstPsj.sendKeys("Nombre Nombre");
+        firstPsj.sendKeys(Keys.TAB);
+        waitFor(2);
+        //Revisar desde aqui...//
+        lastPsj.sendKeys("Apellido Apellido");
+        waitFor(2);
         birthPsj.click();
-        waitFor(5);
+        waitFor(2);
         birthPsj.sendKeys("16111988");
         waitFor(5);
-        genderSlt.click();
-        waitFor(5);
-        genderSlt.sendKeys("Masculino");
-        waitFor(5);
-        nationality.click();
-        waitFor(5);
-        nationality.sendKeys("Chile");
-        waitFor(5);
+        //genderSlt.click();
+        //genderSlt.sendKeys(Keys.TAB);
+        //nationality.click();
+        //nationality.sendKeys("Chile");
+        //nationality.sendKeys(Keys.TAB);
         documentPsj.click();
         waitFor(5);
-        documentPsj.sendKeys("17305694K");
+        documentPsj.sendKeys("165470974");
         waitFor(5);
         emailPsj.click();
         waitFor(5);
-        emailPsj.sendKeys("jlperezm@outlook.cl");
+        emailPsj.sendKeys("tucorreo_@outlook.cl");
         waitFor(5);
         phonePsj.click();
         waitFor(5);
-        phonePsj.sendKeys("957209256");
+        phonePsj.sendKeys("955669256");
         waitFor(5);
         btnSave.click();
-        waitFor(10);
+        waitFor(5);
+        btn_Continuar.click();
+        waitFor(15);
 
     }
 
